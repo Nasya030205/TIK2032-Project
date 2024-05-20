@@ -5,16 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const messageTextarea = document.querySelector('textarea');
 
     form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        if (validateForm()) {
-            // Jika formulir valid, lakukan tindakan seperti pengiriman data
-            // Di sini Anda bisa menambahkan kode untuk mengirim data formulir ke server atau melakukan tindakan lainnya
-            alert('Formulir berhasil dikirim!');
-            // Mengosongkan formulir setelah pengiriman berhasil
-            fullNameInput.value = '';
-            emailInput.value = '';
-            messageTextarea.value = '';
+        if (!validateForm()) {
+            event.preventDefault();
         }
     });
 
